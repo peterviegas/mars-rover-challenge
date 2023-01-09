@@ -62,3 +62,21 @@ before the next one can move.
 Output
 For each Rover, the output represents its final position (final coordinates and where it is
 facing).
+
+Example Test Case
+
+Lines of Input to the Program:
+5 5
+
+1 2 N
+
+LMLMLMLMM
+
+3 3 E
+
+MMRMMRMRRM
+
+Expected Output:
+1 3 N
+
+5 1 E
