@@ -15,17 +15,16 @@ export function positionCurrentMars(str: string) : boolean {
 		return false;
 	}else{
 		positionMars = str.split("");
-		console.log('positionMars', positionMars);
 
 		//Valid coordinates
 		const coordinateValid = ['N','S','W','E'];
 		direction = positionMars[2].toString()
 		let index = coordinateValid.indexOf(direction);
 		xCoordenation = parseInt(positionMars[0].toString());
-		yCoordenation = parseInt(positionMars[0].toString());
+		yCoordenation = parseInt(positionMars[1].toString());
 
 		//validates the positioning
-		return (xCoordenation>0 && xCoordenation<6 && yCoordenation>0 && yCoordenation<6 && index>-1);
+		return (xCoordenation>=0 && xCoordenation<=5 && yCoordenation>=0 && yCoordenation<=5 && index>-1);
 	}
 }
 
@@ -36,7 +35,7 @@ export function movMars(str: string) : string {
 		return '';
 	}else{
 		const move = str.split('');
-
+		//check if it is to move
 		for(let i=0; i< move.length; i++){
 			if(move[i]==='M'){
 				switch (direction) {
@@ -55,16 +54,50 @@ export function movMars(str: string) : string {
 				default:
 					break;
 				}
+				//check change direction right
 			}else{
-				if(move[i]===''){
+				if(move[i]==='R'){
+					switch (direction) {
+					case 'N':
+						direction='E';
+						break;
+					case 'E':
+						direction='S';
+						break;
+					case 'W':
+						direction='N';
+						break;
+					case 'S':
+						direction='W';
+						break;
+					default:
+						break;
+					}
+				//check change direction left
+				}else{
+					if(move[i]==='L'){
+						switch (direction) {
+							case 'N':
+								direction='W';
+								break;
+							case 'E':
+								direction='N';
+								break;
+							case 'W':
+								direction='S';
+								break;
+							case 'S':
+								direction='E';
+								break;
+							default:
+								break;
+						}
+					}
 				}
 			}
-			
 		}
-		
-		
 
 		//Retorn the new position
-		return 'teste';
+		return xCoordenation.toString()+yCoordenation.toString()+direction;
 	}
 }
