@@ -1,5 +1,5 @@
 import { endExperience } from '.';
-//import { 2-menu-options } from './2-menu-options';
+import { abortExperience } from './24-return-start';
 import { clear, print, askQuestion, validIsNumeric } from './console';
 
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
@@ -57,12 +57,12 @@ export function enterHole(hole: string): void {
 			break;
 		case 4:
 			console.log('Option: 4',hole[number]);
-			//return Exit();
+			return abortExperience();
 			break;
 		default:
 			console.log('Option: erro',hole[number]);
-			print(`WHAAAAT ❓🤯😅❓`);
-			print(`You can't find adventures down a ${options[number]} hole!`);
+			print(`WHAAAAT ❓👾👾👾❓`);
+			print(`Something went wrong with the system, contact support for correction! ${options[number]} opção!`);
 			return endExperience();
 	}
 

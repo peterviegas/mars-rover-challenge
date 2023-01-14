@@ -22,3 +22,8 @@ const reader = readline.createInterface({
 export function askQuestion(question: string, callback: (arg: string) => void) {
 	reader.question(`❓ ${question} 👉 `, callback);
 }
+
+// Validate if the value is numeric
+export function validIsNumeric(value: any): boolean{
+	return !isNaN(value)? true: false;
+}
