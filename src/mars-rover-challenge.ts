@@ -2,7 +2,7 @@
 const COORDINATESMAX = [5,5];
 //Create a const minimum
 const COORDINATEMIN = [0,0];
-//Initial podsition
+//Initial position
 let positionMars = [0,0,'N'];
 let xCoordenation = 0;
 let yCoordenation = 0;
