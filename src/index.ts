@@ -1,4 +1,5 @@
 import { clear, print, askQuestion } from './console';
+import { enterCoordinatePlateau } from './1-plateau';
 
 export function haveExperience(): void {
 	clear(false);
@@ -15,7 +16,7 @@ function failImmediately(): void {
 
  function startExperience(name: string): void {
 	if (name.length > 0) {
-		//return enterCoordinatePlateau(name);
+		return enterCoordinatePlateau(name);
 	} else {
 		print(`I don't know who you are!`);
 		return endExperience();
