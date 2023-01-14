@@ -1,10 +1,13 @@
 import { endExperience } from '..';
 import { enterOption } from './2-menu-options';
+import { Coordenation } from './3-Interfaces';
 import { clear, print, askQuestion, validIsNumeric } from './console';
 
-let xCoordenation:number=0;
-let yCoordenation:number=0;
-let name:string=''
+let coodenation: Coordenation= {
+	xCoordenation:5,
+	yCoordenation:5
+ };
+let name:string='';
 
 export function coordenatePlateau(): void{
 	clear(true);
@@ -13,13 +16,13 @@ export function coordenatePlateau(): void{
 	const coordinateMaxValidation = [100,100];
 
 	// check the limit
-	if (xCoordenation > coordinateMaxValidation[0] || yCoordenation > coordinateMaxValidation[1]) {
+	if (coodenation.xCoordenation > coordinateMaxValidation[0] || coodenation.yCoordenation > coordinateMaxValidation[1]) {
 		print(`WHAAAAT ❓👾👾👾👾❓`);
 		print(`Remember the boundaries established for testing the Mars Rover ${coordinateMaxValidation} Coordenates!`);
 		return endExperience();
 	} else {
 		//Create a constant grid - The first line inputted into the program represents the upper-right coordinates of the Plateau.
-		const coordinateMax = [xCoordenation, yCoordenation];
+		const coordinateMax = [coodenation.xCoordenation, coodenation.yCoordenation];
 		
 		//Create a const minimum
 		const coordinateMin = [0, 0];
@@ -51,7 +54,7 @@ export function enterXCoordinate(coordenate: string): void {
 		print(`Invalid informed value for the X coordinate! 😭`);
 		return endExperience();
 	}else{
-		xCoordenation = number;
+		coodenation.xCoordenation = number;
 		askQuestion('Enter the value of the Y axis (vertical)', enterYCoordinate);
 	}
 }
@@ -65,7 +68,11 @@ export function enterYCoordinate(coordenate: string): void {
 		print(`Invalid informed value for the Y coordinate! 😭`);
 		return endExperience();
 	}else{
-		yCoordenation = number;
+		coodenation.yCoordenation = number;
 		coordenatePlateau();
 	}
+}
+
+export function getPlateauCoordinates (): Coordenation{
+	return coodenation;
 }

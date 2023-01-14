@@ -1,4 +1,4 @@
-import { endExperience } from '..';
+import { endExperience } from '.';
 import { haveExperience } from './index'
 import { enterOption } from './2-menu-options';
 import { clear, print, askQuestion, validIsNumeric } from './console';

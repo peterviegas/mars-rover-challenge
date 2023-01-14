@@ -1,4 +1,7 @@
 //Create a constant grid - The first line inputted into the program represents the upper-right coordinates of the Plateau.
+import { Coordenation, Position } from './3-Interfaces';
+import { moving, directionRight, directionLeft } from './4-rules';
+
 const COORDINATESMAX = [5,5];
 //Create a const minimum
 const COORDINATEMIN = [0,0];
@@ -29,75 +32,21 @@ export function positionCurrentMars(str: string) : boolean {
 }
 
 //Getting moving
-export function movMars(str: string) : string {
+export function movMars(position: Position, coordenation: Coordenation, instruction: string) : string {
+console.log('Entrou no moving')
+    for(let i=0; i< instruction.length; i++){
+	    if(instruction[i]==='M'){
+		    position=moving(position);
+	    //check change direction right
+	    }else{
+		    if(instruction[i]==='R'){
+			    position=directionRight(position);
+		    }else{
+			    position=directionLeft(position);
+		    }
+	    }
+    }
 
-	if (str===''){
-		return '';
-	}else{
-		const move = str.split('');
-		//check if it is to move
-		for(let i=0; i< move.length; i++){
-			if(move[i]==='M'){
-				switch (direction) {
-				case 'N':
-					yCoordenation+=1;
-					break;
-				case 'E':
-					xCoordenation+=1;
-					break;
-				case 'W':
-					xCoordenation-=1;
-					break;
-				case 'S':
-					yCoordenation-=1;
-					break;
-				default:
-					break;
-				}
-				//check change direction right
-			}else{
-				if(move[i]==='R'){
-					switch (direction) {
-					case 'N':
-						direction='E';
-						break;
-					case 'E':
-						direction='S';
-						break;
-					case 'W':
-						direction='N';
-						break;
-					case 'S':
-						direction='W';
-						break;
-					default:
-						break;
-					}
-				//check change direction left
-				}else{
-					if(move[i]==='L'){
-						switch (direction) {
-							case 'N':
-								direction='W';
-								break;
-							case 'E':
-								direction='N';
-								break;
-							case 'W':
-								direction='S';
-								break;
-							case 'S':
-								direction='E';
-								break;
-							default:
-								break;
-						}
-					}
-				}
-			}
-		}
-
-		//Retorn the new position
-		return xCoordenation.toString()+yCoordenation.toString()+direction;
-	}
+	//Retorn the new position
+	return position.xPosition.toString()+position.yPosition.toString()+position.direction;
 }

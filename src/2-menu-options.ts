@@ -1,21 +1,24 @@
 import { endExperience } from '.';
-import { abortExperience } from './24-return-start';
 import { clear, print, askQuestion, validIsNumeric } from './console';
+import { abortExperience } from './24-return-start';
+import { enterTDD } from './25-TDD'
 
+let name:string='';
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
 			   'Send movement to drone and receive position (starting point for this test is base 0,0)',
 			   'Submit position and instructions. You get the actual position', 
 			   'Return to base. Send the location and receive instructions to return.', 
 			   'Exit tests'] as const;
 
-export function enterOption(name: string) {
+export function enterOption(nameReceive: string) {
 	clear(false);
 	print('------------------------');
-	print(`🚀 Hi ${name}! 🚀`);
+	print(`🚀 Hi ${nameReceive}! 🚀`);
 	print('------------------------');
 	print('Choose the option for your test: ');
 	options.forEach((h, i) => print(`   ${i} - ${h}`));
 	askQuestion('Which number hole will you choose?', enterHole);
+	name = nameReceive;
 }
 
 export function enterHole(hole: string): void {
@@ -41,7 +44,7 @@ export function enterHole(hole: string): void {
 	switch (number) {
 		case 0:
 			console.log('Option: 0',hole[number]);
-			//return TDD();
+			return enterTDD(name);
 			break;
 		case 1:
 			console.log('Option: 1',hole[number]);

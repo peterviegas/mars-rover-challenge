@@ -5,6 +5,11 @@ export interface Position {
 	direction: string
 }
 
+export interface Coordenation {
+	xCoordenation:number,
+	yCoordenation:number
+};
+
 //Valid coordinates
 export const coordinate = ['N','S','W','E'];
 

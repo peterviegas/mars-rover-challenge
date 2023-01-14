@@ -1,48 +1,49 @@
 import { Position } from './3-Interfaces';
 //Direction Left
-export function directionLeft(direction:string):string{
-	switch (direction) {
+export function directionLeft(position:Position):Position{
+	switch (position.direction) {
 		case 'N':
-			direction='W';
+			position.direction='W';
 			break;
 		case 'E':
-			direction='N';
+			position.direction='N';
 			break;
 		case 'W':
-			direction='S';
+			position.direction='S';
 			break;
 		case 'S':
-			direction='E';
+			position.direction='E';
 			break;
 		default:
 			break;
 	}
-	return direction;
+	return position;
 }
 
 //Direction Right
-export function directionRight(direction:string):string{
-	switch (direction) {
+export function directionRight(position:Position):Position{
+	switch (position.direction) {
 		case 'N':
-			direction='E';
+			position.direction='E';
 			break;
 		case 'E':
-			direction='S';
+			position.direction='S';
 			break;
 		case 'W':
-			direction='N';
+			position.direction='N';
 			break;
 		case 'S':
-			direction='W';
+			position.direction='W';
 			break;
 		default:
 			break;
 		}
-	return direction;
+	return position;
 }
 
 //Moving
 export function moving(position: Position):Position{
+	console.log('valor enviado rules', position)
 	switch (position.direction) {
 		case 'N':
 			position.yPosition+=1;
@@ -59,5 +60,6 @@ export function moving(position: Position):Position{
 		default:
 			break;
 	}
+	console.log('valor retornado rules', position)
 		return position;
 }
