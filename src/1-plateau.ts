@@ -1,9 +1,10 @@
 import { endExperience } from '..';
-//import { enterOption } from './2-menu-options';
+import { enterOption } from './2-menu-options';
 import { clear, print, askQuestion, validIsNumeric } from './console';
 
 let xCoordenation:number=0;
 let yCoordenation:number=0;
+let name:string=''
 
 export function coordenatePlateau(): void{
 	clear(true);
@@ -24,11 +25,12 @@ export function coordenatePlateau(): void{
 		const coordinateMin = [0, 0];
 	console.log('cheguei aqui')
 
-		//return enterOption();
+		return enterOption(name);
 	}
 }
 
-export function enterCoordinatePlateau(name: string) {
+export function enterCoordinatePlateau(nameReceive: string) {
+	name = nameReceive;
 	clear(false);
 	print('------------------------');
 	print(`🚀 Welcome ${name}! 🚀`);
