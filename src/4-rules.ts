@@ -43,7 +43,6 @@ export function directionRight(position:Position):Position{
 
 //Moving
 export function moving(position: Position):Position{
-	console.log('valor enviado rules', position)
 	switch (position.direction) {
 		case 'N':
 			position.yPosition+=1;

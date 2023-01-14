@@ -17,18 +17,13 @@ export function enterTDD(name: string) {
 export function enterSettingPDD(): void {
 	clear(true);
 
-	console.log('entrou no enterSettingPDD')
 	//Position default initial
 	let position: Position= {
 		xPosition: 3,
 		yPosition: 3,
 		direction: 'E'
 	};
-	let coodenation: Coordenation= {
-	   xCoordenation:5,
-	   yCoordenation:5
-	};
-
+	
 	let instruction: string;
 	instruction = 'MMRMMRMRRM'
 
@@ -36,7 +31,7 @@ export function enterSettingPDD(): void {
 
 
 	//get plateau coordinates
-	coodenation = getPlateauCoordinates();
+	let coodenation: Coordenation= getPlateauCoordinates();
 
 	movMars(position, coodenation, instruction);
 }
