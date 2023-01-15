@@ -16,11 +16,8 @@
 #### Here are the letters and their resultant action:
 
 ## Letter Action
-
 + L Spins the Rover 90 degrees Left without moving from the current coordinate point
-
 + R Spins the Rover 90 degrees Right without moving from the current coordinate point
-
 + M Moves the Rover forward by one grid point, maintaining the same heading/orientation
 
 ## Inputs into the Program
@@ -54,16 +51,13 @@
 + 5 5
 
 + 1 2 N
-
 + LMLMLMLMM
 
 + 3 3 E
-
 + MMRMMRMRRM
 
-+ Expected Output:
+#### Expected Output:
 + 1 3 N
-
 + 5 1 E
 
 ## For the construction of the project, it was thought of dividing it into smaller parts with navigation based on Alice's project (Wonderland)
