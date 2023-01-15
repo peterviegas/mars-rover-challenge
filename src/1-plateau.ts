@@ -37,7 +37,7 @@ export function enterCoordinatePlateau(nameReceive: string) {
 	print('------------------------');
 	print(`🚀 Welcome ${name}! 🚀`);
 	print('------------------------');
-	print('Now I need the X and Y coordinate numbers (established limit of 100, 100): ');
+	print('Now I need the X and Y coordinate numbers for the creation of Plateau (established limit of 100, 100): ');
 	askQuestion('Enter the value of the X axis (horizontal)', enterXCoordinate);
 	
 }
