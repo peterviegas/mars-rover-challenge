@@ -60,28 +60,44 @@ export function movMars(position: Position, coordenation: Coordenation, instruct
 	let coordenationMin: Coordenation = minCoordinatePlateau();
 	let collision = false;
 
-    for(let i=0; i< instruction.length; i++){
-	    if(instruction[i]==='M'){
-		    position=moving(position);
-	    //check change direction right
-	    }else{
-		    if(instruction[i]==='R'){
-			    position=directionRight(position);
-		    }else{
-			    position=directionLeft(position);
-		    }
-	    }
-		if(position.xPosition<coordenationMin.xCoordenation ||
-			position.xPosition>coordenation.xCoordenation ||
-			position.yPosition<coordenationMin.yCoordenation ||
-			position.yPosition>coordenation.yCoordenation){
-				collision = true;
-				break;
-			} 
-    }
+	let returnValidadeInstructions = verifInstructions(instruction);
 
-	//Retorn the new position
-	return collision === true? 
-	    position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction + ' - collision':
-		position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction;
+	if (returnValidadeInstructions){
+		for(let i=0; i< instruction.length; i++){
+			if(instruction[i]==='M'){
+				position=moving(position);
+			//check change direction right
+			}else{
+				if(instruction[i]==='R'){
+					position=directionRight(position);
+				}else{
+					position=directionLeft(position);
+				}
+			}
+			if(position.xPosition<coordenationMin.xCoordenation ||
+				position.xPosition>coordenation.xCoordenation ||
+				position.yPosition<coordenationMin.yCoordenation ||
+				position.yPosition>coordenation.yCoordenation){
+					collision = true;
+					break;
+				} 
+		}
+		//Retorn the new position
+		return collision === true? 
+			position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction + ' - collision':
+			position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction;
+	}else{
+        return 'Invalidates past instructions'
+	}
+
+}
+export function verifInstructions(instruction: string) : boolean {
+    let itemInstuction= instruction.split('');
+
+	for(let i=0; i<itemInstuction.length;i++){
+		if(itemInstuction[i]!=='M'&& itemInstuction[i]!=='R'&& itemInstuction[i]!=='L'){
+			return false;
+		}
+	}
+	return true;
 }
