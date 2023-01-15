@@ -2,6 +2,7 @@ import { endExperience } from '.';
 import { clear, print, askQuestion, validIsNumeric } from './console';
 import { abortExperience } from './24-return-start';
 import { enterTDD } from './20-TDD'
+import { enterSendInstructions } from './21-send-instructions';
 
 let name:string='';
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
@@ -45,7 +46,7 @@ export function enterHole(hole: string): void {
 			return enterTDD(name);
 			break;
 		case 1:
-			//return SendMov();
+			return enterSendInstructions(name);
 			break;
 		case 2:
 			//return SendPosi();
