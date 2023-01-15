@@ -39,31 +39,24 @@ export function enterHole(hole: string): void {
 		return endExperience();
 	}
 
-	console.log('Numero recebido: ', number)
 	// Directs the test to the requested option
 	switch (number) {
 		case 0:
-			console.log('Option: 0',hole[number]);
 			return enterTDD(name);
 			break;
 		case 1:
-			console.log('Option: 1',hole[number]);
 			//return SendMov();
 			break;
 		case 2:
-			console.log('Option: 2',hole[number]);
 			//return SendPosi();
 			break;
 		case 3:
-			console.log('Option: 3',hole[number]);
 			//return SendLocal();
 			break;
 		case 4:
-			console.log('Option: 4',hole[number]);
 			return abortExperience();
 			break;
 		default:
-			console.log('Option: erro',hole[number]);
 			print(`WHAAAAT ❓👾👾👾❓`);
 			print(`Something went wrong with the system, contact support for correction! ${options[number]} opção!`);
 			return endExperience();

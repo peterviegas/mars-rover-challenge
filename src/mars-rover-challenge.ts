@@ -17,15 +17,18 @@ export function validatePositionCurrentMars(str: string) : boolean {
 	if(coordenation.xCoordenation>coordenationMax.xCoordenation ||
 		coordenation.yCoordenation>coordenationMax.yCoordenation) return false;
 
+	console.log('verificando a String', str)
 	if (str===''){
 		return false;
 	}else{
 		//Mount position
 		let positionMars = str.split(" ");
+	console.log('verificando o array gerado', positionMars)
 		
+		if(positionMars.length!==3) return false;
+
 		if (isNaN(parseInt(positionMars[0].toString())) ||
-		    isNaN(parseInt(positionMars[1].toString())) ||
-			positionMars.length!==3) {
+		    isNaN(parseInt(positionMars[1].toString()))) {
 		    return false;
 		}	
 
@@ -34,6 +37,9 @@ export function validatePositionCurrentMars(str: string) : boolean {
 			yPosition: parseInt(positionMars[1].toString()),
 			direction: positionMars[2].toString()
 		};
+
+		console.log('valor de x: ', position.xPosition)
+		console.log('valor de y: ', position.xPosition)
 
 		//Valid coordinates
 		const coordinateValid = ['N','S','W','E'];
@@ -50,6 +56,10 @@ export function validatePositionCurrentMars(str: string) : boolean {
 
 //Getting moving
 export function movMars(position: Position, coordenation: Coordenation, instruction: string) : string {
+	//get min coordenate Plateau
+	let coordenationMin: Coordenation = minCoordinatePlateau();
+	let collision = false;
+
     for(let i=0; i< instruction.length; i++){
 	    if(instruction[i]==='M'){
 		    position=moving(position);
@@ -61,8 +71,17 @@ export function movMars(position: Position, coordenation: Coordenation, instruct
 			    position=directionLeft(position);
 		    }
 	    }
+		if(position.xPosition<coordenationMin.xCoordenation ||
+			position.xPosition>coordenation.xCoordenation ||
+			position.yPosition<coordenationMin.yCoordenation ||
+			position.yPosition>coordenation.yCoordenation){
+				collision = true;
+				break;
+			} 
     }
 
 	//Retorn the new position
-	return position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction;
+	return collision === true? 
+	    position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction + ' - collision':
+		position.xPosition.toString()+' '+position.yPosition.toString()+' '+position.direction;
 }

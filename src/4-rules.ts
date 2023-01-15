@@ -59,6 +59,5 @@ export function moving(position: Position):Position{
 		default:
 			break;
 	}
-	console.log('valor retornado rules', position)
-		return position;
+	return position;
 }

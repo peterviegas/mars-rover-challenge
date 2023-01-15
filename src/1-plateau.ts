@@ -27,8 +27,6 @@ export function coordenatePlateau(): void{
 		
 		//Create a const minimum
 		const coordinateMin = [0, 0];
-	console.log('cheguei aqui')
-
 		return enterOption(name);
 	}
 }

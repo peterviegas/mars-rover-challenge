@@ -18,4 +18,3 @@ describe("Test function validatePositionCurrentMars and setPlateauCoordinates", 
 });
 
 
-
