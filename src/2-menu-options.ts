@@ -7,7 +7,7 @@ import { enterSendPoInst } from './22-send-pos-inst';
 import { enterSendPosition } from './23-send-local-return-base';
 
 let name:string='';
-const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
+const options = ['Execute o TDD (Test Drive Developer) ',
 			   'Send movement to drone and receive position (starting point for this test is base 0,0)',
 			   'Submit position and instructions. You get the actual position', 
 			   'Return to base. Send the location and receive instructions to return.', 
