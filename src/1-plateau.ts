@@ -1,7 +1,7 @@
 import { endExperience } from '..';
 import { enterOption } from './2-menu-options';
 import { Coordenation } from './3-Interfaces';
-import { clear, print, askQuestion, validIsNumeric } from './console';
+import { clear, print, askQuestion } from './console';
 import { maxCoordinatePlateau} from './parameters'
 
 let coodenation: Coordenation= {

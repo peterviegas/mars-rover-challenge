@@ -1,7 +1,5 @@
-import { endExperience } from '.';
 import { haveExperience } from './index'
-import { enterOption } from './2-menu-options';
-import { clear, print, askQuestion, validIsNumeric } from './console';
+import { print, askQuestion} from './console';
 
 export function abortExperience(): void {
 	print('***************************************');

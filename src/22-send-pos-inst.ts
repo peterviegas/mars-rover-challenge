@@ -19,7 +19,7 @@ export function enterSendPoInst(name: string) {
 	print('and R change the rotation to 90 degrees right.')
 	print('--------------------------------------------------------------------------------------------------------');
 	nameReceive = name;
-	askQuestion('Enter the sequence and press enter when ready.', enterPosition);
+	askQuestion('Enter the position (ex: 1 2 N) and press enter when ready.', enterPosition);
 }
 
 export function enterPosition(positionReceive: string): void {
@@ -28,7 +28,7 @@ export function enterPosition(positionReceive: string): void {
 
 	if (retornVerif){
 		positionInitial = positionReceive;
-        askQuestion('Enter the sequence and press enter when ready.', enterInstructions);
+        askQuestion('Enter the sequence (ex: MMLMMR) and press enter when ready.', enterInstructions);
 
 	}else{
 		clear(true);

@@ -1,6 +1,5 @@
 import { validatePositionCurrentMars } from "./mars-rover-challenge";
-import { movMars } from "./mars-rover-challenge";
-import { Coordenation, Position } from "./3-Interfaces";
+import { Coordenation} from "./3-Interfaces";
 import { setPlateauCoordinates } from "./1-plateau";
 import { maxCoordinatePlateau } from "./parameters"
 

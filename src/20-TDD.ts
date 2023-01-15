@@ -1,5 +1,4 @@
-import { endExperience } from '.';
-import { clear, print, askQuestion, validIsNumeric } from './console';
+import { clear, print, askQuestion} from './console';
 import { movMars } from './mars-rover-challenge';
 import { Coordenation, Position } from './3-Interfaces';
 import { getPlateauCoordinates } from './1-plateau';

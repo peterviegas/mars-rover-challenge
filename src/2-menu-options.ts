@@ -1,5 +1,5 @@
 import { endExperience } from '.';
-import { clear, print, askQuestion, validIsNumeric } from './console';
+import { clear, print, askQuestion } from './console';
 import { abortExperience } from './24-return-start';
 import { enterTDD } from './20-TDD'
 import { enterSendInstructions } from './21-send-instructions';

@@ -77,7 +77,7 @@ export function enterPosition(positionReceive: string): void {
 	    print('************************************************************************');
 	    print('Rover XPTO')
 	    print(`Coordenate Plateau informad:  ${coodenation.xCoordenation}, ${coodenation.yCoordenation}`);
-	    print(`Position initial:  ${retornoMov}` );
+	    print(`Position initial:  ${positionReceive}` );
 	    print(`Intructions:  ${instruction}`);
 	    print(`Position end:  ${positionEnd}`);
 	    print('************************************************************************');
