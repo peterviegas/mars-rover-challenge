@@ -4,6 +4,7 @@ import { abortExperience } from './24-return-start';
 import { enterTDD } from './20-TDD'
 import { enterSendInstructions } from './21-send-instructions';
 import { enterSendPoInst } from './22-send-pos-inst';
+import { enterSendPosition } from './23-send-local-return-base';
 
 let name:string='';
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
@@ -53,7 +54,7 @@ export function enterHole(hole: string): void {
 			return enterSendPoInst(name);
 			break;
 		case 3:
-			//return SendLocal();
+			return enterSendPosition(name);
 			break;
 		case 4:
 			return abortExperience();
