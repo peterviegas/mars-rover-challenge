@@ -1,7 +1,7 @@
 import { endExperience } from '.';
 import { clear, print, askQuestion, validIsNumeric } from './console';
 import { abortExperience } from './24-return-start';
-import { enterTDD } from './25-TDD'
+import { enterTDD } from './20-TDD'
 
 let name:string='';
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
