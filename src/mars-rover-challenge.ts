@@ -17,13 +17,11 @@ export function validatePositionCurrentMars(str: string) : boolean {
 	if(coordenation.xCoordenation>coordenationMax.xCoordenation ||
 		coordenation.yCoordenation>coordenationMax.yCoordenation) return false;
 
-	console.log('verificando a String', str)
 	if (str===''){
 		return false;
 	}else{
 		//Mount position
 		let positionMars = str.split(" ");
-	console.log('verificando o array gerado', positionMars)
 		
 		if(positionMars.length!==3) return false;
 
@@ -37,9 +35,6 @@ export function validatePositionCurrentMars(str: string) : boolean {
 			yPosition: parseInt(positionMars[1].toString()),
 			direction: positionMars[2].toString()
 		};
-
-		console.log('valor de x: ', position.xPosition)
-		console.log('valor de y: ', position.xPosition)
 
 		//Valid coordinates
 		const coordinateValid = ['N','S','W','E'];
@@ -64,6 +59,7 @@ export function movMars(position: Position, coordenation: Coordenation, instruct
 
 	if (returnValidadeInstructions){
 		for(let i=0; i< instruction.length; i++){
+
 			if(instruction[i]==='M'){
 				position=moving(position);
 			//check change direction right

@@ -3,6 +3,7 @@ import { clear, print, askQuestion, validIsNumeric } from './console';
 import { abortExperience } from './24-return-start';
 import { enterTDD } from './20-TDD'
 import { enterSendInstructions } from './21-send-instructions';
+import { enterSendPoInst } from './22-send-pos-inst';
 
 let name:string='';
 const options = ['Execute o TDD (Desenvolvedor de sistema de test drive) ',
@@ -49,7 +50,7 @@ export function enterHole(hole: string): void {
 			return enterSendInstructions(name);
 			break;
 		case 2:
-			//return SendPosi();
+			return enterSendPoInst(name);
 			break;
 		case 3:
 			//return SendLocal();
