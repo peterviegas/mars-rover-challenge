@@ -1,10 +1,10 @@
-import { endExperience } from '.';
-import { clear, print, askQuestion } from './console';
-import { abortExperience } from './24-return-start';
-import { enterTDD } from './20-TDD'
-import { enterSendInstructions } from './21-send-instructions';
-import { enterSendPoInst } from './22-send-pos-inst';
-import { enterSendPosition } from './23-send-local-return-base';
+import { endExperience } from '..';
+import { clear, print, askQuestion } from '../console/console';
+import { abortExperience } from './rover/return-start';
+import { enterTDD } from './TDD/TDD'
+import { enterSendInstructions } from './rover/send-instructions';
+import { enterSendPoInst } from './rover/send-pos-inst';
+import { enterSendPosition } from './rover/send-local-return-base';
 
 let name:string='';
 const options = ['Execute o TDD (Test Drive Developer) ',

@@ -1,5 +1,5 @@
-import { haveExperience } from './index'
-import { print, askQuestion} from './console';
+import { haveExperience } from '../../index'
+import { print, askQuestion} from '../../console/console';
 
 export function abortExperience(): void {
 	print('***************************************');

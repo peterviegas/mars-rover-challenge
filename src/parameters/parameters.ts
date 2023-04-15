@@ -1,4 +1,4 @@
-import { Coordenation } from "./3-Interfaces";
+import { Coordenation } from "../interface/Interfaces";
 
 //parameters default
 export function maxCoordinatePlateau(): Coordenation{

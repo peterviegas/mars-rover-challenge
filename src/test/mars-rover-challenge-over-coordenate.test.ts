@@ -1,6 +1,6 @@
-import { validatePositionCurrentMars } from "../src/mars-rover-challenge";
-import { Coordenation } from "./3-Interfaces";
-import { setPlateauCoordinates } from "./1-plateau";
+import { validatePositionCurrentMars } from "./mars-rover-challenge";
+import { Coordenation } from "../interface/Interfaces";
+import { setPlateauCoordinates } from "../menu/plateau/plateau";
 
 //Plateau creation test
 describe("Test function validatePositionCurrentMars and setPlateauCoordinates", () => {

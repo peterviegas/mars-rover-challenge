@@ -1,9 +1,9 @@
-import { clear, print, askQuestion } from './console';
-import { movMars } from './mars-rover-challenge';
-import { Coordenation, Position } from './3-Interfaces';
-import { getPlateauCoordinates } from './1-plateau';
-import { enterOption } from './2-menu-options';
-import { validatePositionCurrentMars } from './mars-rover-challenge';
+import { clear, print, askQuestion } from '../../console/console';
+import { movMars } from '../../test/mars-rover-challenge';
+import { Coordenation, Position } from '../../interface/Interfaces';
+import { getPlateauCoordinates } from '../plateau/plateau';
+import { enterOption } from '../menu-options';
+import { validatePositionCurrentMars } from '../../test/mars-rover-challenge';
 
 let nameReceive: string = '';
 export function enterSendPosition(name: string) {

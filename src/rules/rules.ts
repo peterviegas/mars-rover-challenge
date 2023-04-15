@@ -1,4 +1,4 @@
-import { Position } from './3-Interfaces';
+import { Position } from '../interface/Interfaces';
 //Direction Left
 export function directionLeft(position:Position):Position{
 	switch (position.direction) {

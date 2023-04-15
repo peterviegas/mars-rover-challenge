@@ -1,7 +1,7 @@
 import { verifInstructions } from "./mars-rover-challenge";
-import { Coordenation} from "./3-Interfaces";
-import { setPlateauCoordinates } from "./1-plateau";
-import { maxCoordinatePlateau } from "./parameters"
+import { Coordenation} from "../interface/Interfaces";
+import { setPlateauCoordinates } from "../menu/plateau/plateau";
+import { maxCoordinatePlateau } from "../parameters/parameters"
 
 describe("Test function verifInstructions Valid", () => {
 	let coordenation: Coordenation= maxCoordinatePlateau();

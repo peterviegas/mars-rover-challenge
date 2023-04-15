@@ -1,8 +1,8 @@
-import { clear, print, askQuestion} from './console';
-import { movMars } from './mars-rover-challenge';
-import { Coordenation, Position } from './3-Interfaces';
-import { getPlateauCoordinates } from './1-plateau';
-import { enterOption } from './2-menu-options';
+import { clear, print, askQuestion} from '../../console/console';
+import { movMars } from '../../test/mars-rover-challenge';
+import { Coordenation, Position } from '../../interface/Interfaces';
+import { getPlateauCoordinates } from '../plateau/plateau';
+import { enterOption } from '../menu-options';
 
 let nameReceive: string = '';
 export function enterTDD(name: string) {

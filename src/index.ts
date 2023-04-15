@@ -1,5 +1,5 @@
-import { clear, print, askQuestion } from './console';
-import { enterCoordinatePlateau } from './1-plateau';
+import { clear, print, askQuestion } from './console/console';
+import { enterCoordinatePlateau } from './menu/plateau/plateau';
 
 export function haveExperience(): void {
 	clear(false);

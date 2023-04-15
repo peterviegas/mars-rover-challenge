@@ -1,8 +1,8 @@
 //Create a constant grid - The first line inputted into the program represents the upper-right coordinates of the Plateau.
-import { Coordenation, Position } from './3-Interfaces';
-import { moving, directionRight, directionLeft } from './4-rules';
-import { getPlateauCoordinates } from './1-plateau'
-import { maxCoordinatePlateau, minCoordinatePlateau } from './parameters'
+import { Coordenation, Position } from '../interface/Interfaces';
+import { moving, directionRight, directionLeft } from '../rules/rules';
+import { getPlateauCoordinates } from '../menu/plateau/plateau'
+import { maxCoordinatePlateau, minCoordinatePlateau } from '../parameters/parameters'
 
 //Getting the current position
 export function validatePositionCurrentMars(str: string) : boolean {

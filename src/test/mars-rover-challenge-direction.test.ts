@@ -1,7 +1,7 @@
-import { movMars } from "../src/mars-rover-challenge";
-import { Coordenation, Position } from "./3-Interfaces";
-import { setPlateauCoordinates } from "./1-plateau";
-import { maxCoordinatePlateau } from "./parameters"
+import { movMars } from "./mars-rover-challenge";
+import { Coordenation, Position } from "../interface/Interfaces";
+import { setPlateauCoordinates } from "../menu/plateau/plateau";
+import { maxCoordinatePlateau } from "../parameters/parameters"
 
 describe("Change drone direction left", () => {
 	let coordenation: Coordenation= maxCoordinatePlateau();
